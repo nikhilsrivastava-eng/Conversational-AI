@@ -1,0 +1,16 @@
+[project]
+name = "conversational-bot-server"
+version = "0.1.0"
+description = "Server for the conversational bot"
+requires-python = ">=3.10, <3.12"
+dependencies = [
+    "openai-whisper",
+    "ollama",
+    "TTS==0.22.0",
+    "pyaudio",
+    "fastapi",
+	"python-multipart",
+    "uvicorn[standard]",
+]
+
+

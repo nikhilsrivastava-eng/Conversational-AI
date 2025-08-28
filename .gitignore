@@ -1,0 +1,11 @@
+.env    
+__pycache__/
+*.pyc
+temp_audio.wav                  
+.DS_Store       
+.vscode/    
+logs/
+mypy_cache/
+.idea/      
+server/temp_audio.wav   
+temp_audio.wav  
