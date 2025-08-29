@@ -7,7 +7,7 @@ from . import tts
 from pydantic import BaseModel
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
-
+from fastapi.middleware.cors import CORSMiddleware
 class ChatRequest(BaseModel):
     prompt: str
 
@@ -15,6 +15,14 @@ class SynthesizeRequest(BaseModel):
     text: str
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Allows all origins; replace with specific origins for production
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # Allows all headers
+)
 
 api_router = APIRouter(prefix="/api")
 
